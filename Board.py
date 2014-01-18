@@ -1,4 +1,9 @@
 class Board(object):
+    state = None
+
+    def __init__(self):
+        self.state = Board.emptyBoard()
+
     @staticmethod
     def emptyBoard():
         return """
@@ -12,4 +17,15 @@ class Board(object):
 """.strip()
 
     def renderState(self):
-        return Board.emptyBoard()
+        return self.state
+
+    def fillSquare(self, x, y, symbol):
+        self.state = """
++---+---+---+
+| X |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+""".strip()
