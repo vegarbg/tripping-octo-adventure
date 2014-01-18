@@ -1,3 +1,7 @@
+Given: 
+When: The game is started.
+Then: An empty board is generated.
+
 Given: The board is empty
 When: The player clicks a square
 Then: The square is filled with the current player's symbol
