@@ -1,6 +1,16 @@
 class Game(object):
+    emptyBoard = """
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+""".strip()
+
     def getDisplay(self):
-        return ''
+        return self.emptyBoard
 
 if __name__ == '__main__':
     game = Game()
