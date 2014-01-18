@@ -33,6 +33,16 @@ class TestBoard(unittest.TestCase):
 |   |   |   |
 +---+---+---+
 """.strip() )
+        board.fillSquare( 1, 0, "X" )
+        self.assertEquals( board.renderState(), """
++---+---+---+
+| X | X |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+|   |   |   |
++---+---+---+
+""".strip() )
 
     def emptyBoard(self):
         return """

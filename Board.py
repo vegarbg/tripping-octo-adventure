@@ -2,7 +2,15 @@ class Board(object):
     state = None
 
     def __init__(self):
-        self.state = Board.emptyBoard()
+        self.state = Board.emptyState()
+
+    @staticmethod
+    def emptyState():
+        return [
+            [ " ", " ", " " ],
+            [ " ", " ", " " ],
+            [ " ", " ", " " ]
+        ]
 
     @staticmethod
     def emptyBoard():
@@ -17,15 +25,26 @@ class Board(object):
 """.strip()
 
     def renderState(self):
-        return self.state
+        state = Board.renderLine() + "\n"
+        state += Board.renderCell( self.state[0][0] ) + Board.renderCell( self.state[0][1] ) + Board.renderCell( self.state[0][2] ) + Board.renderTerminator()
+        state += Board.renderLine() + "\n"
+        state += Board.renderCell( self.state[1][0] ) + Board.renderCell( self.state[1][1] ) + Board.renderCell( self.state[1][2] ) + Board.renderTerminator()
+        state += Board.renderLine() + "\n"
+        state += Board.renderCell( self.state[2][0] ) + Board.renderCell( self.state[2][1] ) + Board.renderCell( self.state[2][2] ) + Board.renderTerminator()
+        state += Board.renderLine()
+        return state
+
+    @staticmethod
+    def renderLine():
+        return "+---+---+---+"
+
+    @staticmethod
+    def renderCell(symbol):
+        return "| " + symbol + " "
+
+    @staticmethod
+    def renderTerminator():
+        return "|\n"
 
     def fillSquare(self, x, y, symbol):
-        self.state = """
-+---+---+---+
-| X |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-""".strip()
+        self.state[y][x] = symbol
