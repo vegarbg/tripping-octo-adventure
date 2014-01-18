@@ -1,16 +1,13 @@
+from Board import Board
+
 class Game(object):
-    emptyBoard = """
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-""".strip()
+    board = None
+
+    def __init__(self):
+        self.board = Board()
 
     def getDisplay(self):
-        return self.emptyBoard
+        return self.board.renderState()
 
 if __name__ == '__main__':
     game = Game()

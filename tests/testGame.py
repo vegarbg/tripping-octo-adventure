@@ -1,6 +1,7 @@
 import unittest
 
 from Game import Game
+from Board import Board
 
 class TestGame(unittest.TestCase):
     def test_getDisplay_returns_a_string(self):
@@ -13,15 +14,4 @@ class TestGame(unittest.TestCase):
         # When: The game is started.
         game = Game()
         # Then: An empty board is generated.
-        self.assertEquals( game.getDisplay(), self.emptyBoard() )
-
-    def emptyBoard(self):
-        return """
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-|   |   |   |
-+---+---+---+
-""".strip()
+        self.assertEquals( game.getDisplay(), Board.emptyBoard() )
