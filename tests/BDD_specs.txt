@@ -1,0 +1,26 @@
+Given: The board is empty
+When: The player clicks a square
+Then: The square is filled with the current player's symbol
+And: The current player is changed to the other player
+
+Given: All but one square is filled
+And: The current player is X
+And: Putting an X in the last square will not make a row of three Xs
+When: The player clicks the empty square
+Then: The game ends in a draw
+
+Given: All but one square is filled
+And: The current player is O
+And: Putting an O in the last square will not make a row of three Os
+When: The player clicks the empty square
+Then: The game ends in a draw
+
+Given: There are two Xs in a row
+And: The player is X
+When: The player clicks an empty square in the same row
+Then: Player X wins
+
+Given: There are two Os in a row
+And: The player is O
+When: The player clicks an empty square in the same row
+Then: Player O wins
